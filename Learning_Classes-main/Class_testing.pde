@@ -2,7 +2,7 @@ class MusicPlayerDivs {
 int NumberOfMusicPanelDIVs = 7; //All Music Panel components
 float[][] MusicPanelDivRatios = new float[NumberOfMusicPanelDIVs][4]; //Store ratios (Rectangles)
 float[] MusicPanelDivs = new float [NumberOfMusicPanelDIVs*4]; //Music Panel Position and Size of components
-int NumberOfButtonDIVs = 9; //All Music Player Buttons
+int NumberOfButtonDIVs = 10; //All Music Player Buttons
 float[][] ButtonDivRatios = new float[NumberOfButtonDIVs][4]; //Store ratios (Rectangles)
 float[] ButtonDivs = new float [NumberOfButtonDIVs*4]; //Button Positions and Size
 int NumberOfButtonIconDIVs = 9; //All Music Player Button Icons
@@ -11,6 +11,9 @@ float[] ButtonIconDivs = new float [NumberOfButtonIconDIVs*6]; //Icon Positions 
 int NumberOfAltButtonIconDIVs = 2; //All Alternate Music Player Button Icons
 float[][] AltButtonIconDivRatios = new float[NumberOfAltButtonIconDIVs][4]; //Store ratios (rectangle)
 float[] AltButtonIconDivs = new float [NumberOfAltButtonIconDIVs*4]; //Icon Positions and Size
+//int NumberOfPlaylistDIVs = 2; //Music Player Playlist
+//float[][] PlaylistDivRatios = new float[NumberOfPlaylistDIVs][4]; //Store ratios (rectangle)
+//float[] PlaylistDivs = new float [NumberOfPlaylistDIVs*4]; //Icon Positions and Size
 color resetDefaultInk=#FFFFFF;
 color Gray=#C9C9C9;
 color LightGray=#CECECE;
@@ -18,6 +21,7 @@ color Black=#000000;
 color Purple=#B031E8;
 color TextPurple=#F986FF;
 boolean MusicPlayer = false;
+boolean PlaylistView = false;
 boolean MouseIsOver(float xVariable, float yVariable, float widthVariable, float heightVariable) {
   return mouseX > xVariable && mouseX < xVariable + widthVariable && mouseY > yVariable && mouseY < yVariable + heightVariable;
 }
@@ -50,14 +54,15 @@ void DivSetup() {
   //Button Divs
   //{X value in ratio of appwidth, Y value in ratio of appwidth, width value in ratio of appwidth, height value in ratio of appheight}
   ButtonDivRatios[0] = new float[]{23.0/24, 0.0, 1.0/24, 1.0/30}; //Quit Button
-  ButtonDivRatios[1] = new float[]{5.0/26, 24.0/40, 1.0/26, 1.0/26}; //Previous Song Button
-  ButtonDivRatios[2] = new float[]{9.0/26, 24.0/40, 1.0/26, 1.0/26}; //Rewind Button
-  ButtonDivRatios[3] = new float[]{25.0/52, 24.0/40, 1.0/26, 1.0/26}; //Play/Pause Button
-  ButtonDivRatios[4] = new float[]{16.0/26, 24.0/40, 1.0/26, 1.0/26}; //Fast Forward Button
-  ButtonDivRatios[5] = new float[]{20.0/26, 24.0/40, 1.0/26, 1.0/26}; //Next Song Button
-  ButtonDivRatios[6] = new float[]{25.0/52, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Shuffle Songs Button
-  ButtonDivRatios[7] = new float[]{9.0/26, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Replay Song Button
-  ButtonDivRatios[8] = new float[]{16.0/26, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Loop Button
+  ButtonDivRatios[1] = new float[]{11.0/12, 23.0/24, 1.0/12, 1.0/24}; //Toggle PlayList View
+  ButtonDivRatios[2] = new float[]{5.0/26, 24.0/40, 1.0/26, 1.0/26}; //Previous Song Button
+  ButtonDivRatios[3] = new float[]{9.0/26, 24.0/40, 1.0/26, 1.0/26}; //Rewind Button
+  ButtonDivRatios[4] = new float[]{25.0/52, 24.0/40, 1.0/26, 1.0/26}; //Play/Pause Button
+  ButtonDivRatios[5] = new float[]{16.0/26, 24.0/40, 1.0/26, 1.0/26}; //Fast Forward Button
+  ButtonDivRatios[6] = new float[]{20.0/26, 24.0/40, 1.0/26, 1.0/26}; //Next Song Button
+  ButtonDivRatios[7] = new float[]{25.0/52, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Shuffle Songs Button
+  ButtonDivRatios[8] = new float[]{9.0/26, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Replay Song Button
+  ButtonDivRatios[9] = new float[]{16.0/26, 24.0/40+2.5/26, 1.0/26, 1.0/26}; //Loop Button
   //
   //Button Icon Divs
   //{The first, third and fifth ratios are X values in ratio of appwidth. The second, fourth and sixth ratios are y values in ratio of appheight}
