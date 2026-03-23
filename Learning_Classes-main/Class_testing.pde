@@ -80,12 +80,13 @@ void DivSetup() {
   AltButtonIconDivRatios[0] = new float[]{204.0/416, 24.0/40+1.0/104, 1.0/208, 1.0/26}; //Previous Button Triangle One
   AltButtonIconDivRatios[1] = new float[]{202.0/416+1.0/52, 24.0/40+1.0/104, 1.0/208, 1.0/26}; //Previous Button Triangle Two
   //
-  PlaylistDivRatios[0] = new float[]{2.0/27+23/432, 23.0/100+22.0/243, 23.0/27, 1.0/21}; //Playlist Song 1
-  PlaylistDivRatios[1] = new float[]{2.0/27+23/432, 23.0/100+44.0/243, 23.0/27, 1.0/21}; //Playlist Song 2
-  PlaylistDivRatios[2] = new float[]{2.0/27+23/432, 23.0/100+65.0/243, 23.0/27, 1.0/21}; //Playlist Song 3
-  PlaylistDivRatios[3] = new float[]{2.0/27+23/432, 23.0/100+86.0/243, 23.0/27, 1.0/21}; //Playlist Song 4
-  PlaylistDivRatios[4] = new float[]{2.0/27+23/432, 23.0/100+108.0/243, 23.0/27, 1.0/21}; //Playlist Song 5
-  PlaylistDivRatios[5] = new float[]{2.0/27+23/432, 23.0/100+130.0/243, 23.0/27, 1.0/21}; //Playlist Song 6
+  //Playlist Display Divs
+  PlaylistDivRatios[0] = new float[]{3.0/27+23/432, 23.0/100+22.0/243, 21.0/27, 2.0/21}; //Playlist Song 1
+  PlaylistDivRatios[1] = new float[]{3.0/27+23/432, 23.0/100+44.0/243, 21.0/27, 2.0/21}; //Playlist Song 2
+  PlaylistDivRatios[2] = new float[]{3.0/27+23/432, 23.0/100+65.0/243, 21.0/27, 2.0/21}; //Playlist Song 3
+  PlaylistDivRatios[3] = new float[]{3.0/27+23/432, 23.0/100+86.0/243, 21.0/27, 2.0/21}; //Playlist Song 4
+  PlaylistDivRatios[4] = new float[]{3.0/27+23/432, 23.0/100+108.0/243, 21.0/27, 2.0/21}; //Playlist Song 5
+  PlaylistDivRatios[5] = new float[]{3.0/27+23/432, 23.0/100+130.0/243, 21.0/27, 2.0/21}; //Playlist Song 6
   //
   CalculateDIVs();
   //
@@ -144,6 +145,7 @@ void draw() {
   stroke(Purple);
   fill(Black);
   rect(MusicPanelDivs[4], MusicPanelDivs[5], MusicPanelDivs[6], MusicPanelDivs[7]);
+  /*
   strokeWeight(3);
   stroke(Purple);
   fill(Black);
@@ -172,6 +174,16 @@ void draw() {
     }
     rect(AltButtonIconDivs[0], AltButtonIconDivs[1], AltButtonIconDivs[2], AltButtonIconDivs[3]);
     rect(AltButtonIconDivs[4], AltButtonIconDivs[5], AltButtonIconDivs[6], AltButtonIconDivs[7]);
+    */
+    ///*
+  strokeWeight(3);
+  stroke(Purple);
+  fill(Black);
+  for (int i = 0; i < NumberOfPlaylistDIVs; i++) {
+  int baseIndex = i*4;
+  rect(PlaylistDivs[baseIndex], PlaylistDivs[baseIndex+1], PlaylistDivs[baseIndex+2], PlaylistDivs[baseIndex+3]);
+  }
+  //*/
   }
   strokeWeight(3);
   stroke(Purple);
