@@ -138,14 +138,13 @@ void draw() {
   //
   rect(MusicPanelDivs[0], MusicPanelDivs[1], MusicPanelDivs[2], MusicPanelDivs[3]);
   //
-  if (MusicPlayer == true) {
+  if (MusicPlayer) {
   fill(Black);
   fill(resetDefaultInk);
   strokeWeight(3);
   stroke(Purple);
   fill(Black);
   rect(MusicPanelDivs[4], MusicPanelDivs[5], MusicPanelDivs[6], MusicPanelDivs[7]);
-  /*
   strokeWeight(3);
   stroke(Purple);
   fill(Black);
@@ -174,16 +173,19 @@ void draw() {
     }
     rect(AltButtonIconDivs[0], AltButtonIconDivs[1], AltButtonIconDivs[2], AltButtonIconDivs[3]);
     rect(AltButtonIconDivs[4], AltButtonIconDivs[5], AltButtonIconDivs[6], AltButtonIconDivs[7]);
-    */
-    ///*
+  }
+  if (PlaylistView) {
+  strokeWeight(3);
+  stroke(Purple);
+  fill(Black);
+  rect(MusicPanelDivs[4], MusicPanelDivs[5], MusicPanelDivs[6], MusicPanelDivs[7]);
   strokeWeight(3);
   stroke(Purple);
   fill(Black);
   for (int i = 0; i < NumberOfPlaylistDIVs; i++) {
   int baseIndex = i*4;
   rect(PlaylistDivs[baseIndex], PlaylistDivs[baseIndex+1], PlaylistDivs[baseIndex+2], PlaylistDivs[baseIndex+3]);
-  }
-  //*/
+    }
   }
   strokeWeight(3);
   stroke(Purple);
@@ -199,12 +201,26 @@ void mousePressed() {
   if (MouseIsOver(ButtonDivs[0], ButtonDivs[1], ButtonDivs[2], ButtonDivs[3])) {
     ToggleMusicPlayer();
     }
+  if (MouseIsOver(ButtonDivs[4], ButtonDivs[5], ButtonDivs[6], ButtonDivs[7])) {
+    TogglePlaylistView();
+  }
   }
 void ToggleMusicPlayer() {
   if (!MusicPlayer) {
     MusicPlayer = true;
+    PlaylistView = false;
   } else if (MusicPlayer) {
     MusicPlayer = false;
+    PlaylistView = false;
+  }
+}
+void TogglePlaylistView() {
+  if (!PlaylistView) {
+    PlaylistView = true;
+    MusicPlayer = false;
+  } else if (PlaylistView) {
+    PlaylistView = false;
+    MusicPlayer = true;
   }
 }
 }
