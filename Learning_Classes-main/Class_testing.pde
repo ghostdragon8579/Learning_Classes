@@ -81,12 +81,12 @@ void DivSetup() {
   AltButtonIconDivRatios[1] = new float[]{202.0/416+1.0/52, 24.0/40+1.0/104, 1.0/208, 1.0/26}; //Previous Button Triangle Two
   //
   //Playlist Display Divs
-  PlaylistDivRatios[0] = new float[]{3.0/27+23/432, 23.0/100+22.0/243, 21.0/27, 2.0/21}; //Playlist Song 1
-  PlaylistDivRatios[1] = new float[]{3.0/27+23/432, 23.0/100+44.0/243, 21.0/27, 2.0/21}; //Playlist Song 2
-  PlaylistDivRatios[2] = new float[]{3.0/27+23/432, 23.0/100+65.0/243, 21.0/27, 2.0/21}; //Playlist Song 3
-  PlaylistDivRatios[3] = new float[]{3.0/27+23/432, 23.0/100+86.0/243, 21.0/27, 2.0/21}; //Playlist Song 4
-  PlaylistDivRatios[4] = new float[]{3.0/27+23/432, 23.0/100+108.0/243, 21.0/27, 2.0/21}; //Playlist Song 5
-  PlaylistDivRatios[5] = new float[]{3.0/27+23/432, 23.0/100+130.0/243, 21.0/27, 2.0/21}; //Playlist Song 6
+  PlaylistDivRatios[0] = new float[]{3.0/27+23/432, 1.0/10+1.0/21, 21.0/27, 2.0/21}; //Playlist Song 1
+  PlaylistDivRatios[1] = new float[]{3.0/27+23/432, 1.0/10+7.0/42, 21.0/27, 2.0/21}; //Playlist Song 2
+  PlaylistDivRatios[2] = new float[]{3.0/27+23/432, 1.0/10+12.0/42, 21.0/27, 2.0/21}; //Playlist Song 3
+  PlaylistDivRatios[3] = new float[]{3.0/27+23/432, 1.0/10+17.0/42, 21.0/27, 2.0/21}; //Playlist Song 4
+  PlaylistDivRatios[4] = new float[]{3.0/27+23/432, 1.0/10+22.0/42, 21.0/27, 2.0/21}; //Playlist Song 5
+  PlaylistDivRatios[5] = new float[]{3.0/27+23/432, 1.0/10+27.0/42, 21.0/27, 2.0/21}; //Playlist Song 6
   //
   CalculateDIVs();
   //
